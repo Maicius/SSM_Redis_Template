@@ -4,7 +4,7 @@
 <mapper namespace="education.cs.scu.mapper.UserMapper">
     <resultMap id ="doUserLoginMap" type="User">
         <result column="userName" property="userName"/>
-        <result column="passowrd" property="password"/>
+        <result column="password" property="password"/>
     </resultMap>
     <select id="doUserLogin" parameterType="User" resultMap="doUserLoginMap">
         SELECT * FROM T_user
