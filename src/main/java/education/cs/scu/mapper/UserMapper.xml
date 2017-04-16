@@ -5,10 +5,11 @@
     <resultMap id ="doUserLoginMap" type="User">
         <result column="userName" property="userName"/>
         <result column="password" property="password"/>
+        <result column="nickName" property="nickName"/>
     </resultMap>
     <select id="doUserLogin" parameterType="User" resultMap="doUserLoginMap">
-        SELECT * FROM T_user
-         WHERE  username = #{userName}
-         AND password = #{password}
+        SELECT * FROM user
+        WHERE  username = #{userName}
+        AND password = #{password}
     </select>
 </mapper>

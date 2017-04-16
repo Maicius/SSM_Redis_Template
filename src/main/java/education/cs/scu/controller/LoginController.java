@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by maicius on 2017/3/31.
@@ -28,7 +28,14 @@ public class LoginController {
         System.out.println(userName);
         ModelAndView mv = new ModelAndView();
         User loginUser = loginService.doUserLogin(user);
-        System.out.println("login_result:" + loginUser.toString());
+        HttpSession session = request.getSession();
+        if(loginUser != null) {
+            session.setAttribute("user", loginUser);
+        }else{
+            User wrongUser = new User();
+            wrongUser.setNickName("该用户不存在");
+            session.setAttribute("user", wrongUser);
+        }
         mv.setViewName("login");
         System.out.println("Controller finished");
         return mv;
