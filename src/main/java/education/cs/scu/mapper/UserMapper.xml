@@ -8,7 +8,7 @@
         <result column="nickName" property="nickName"/>
     </resultMap>
     <select id="doUserLogin" parameterType="User" resultMap="doUserLoginMap">
-        SELECT * FROM user
+        SELECT * FROM test
         WHERE  username = #{userName}
         AND password = #{password}
     </select>
