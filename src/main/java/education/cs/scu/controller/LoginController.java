@@ -38,4 +38,13 @@ public class LoginController {
         }
     }
 
+    @RequestMapping(value="/userLogin", method= RequestMethod.POST)
+    public int userRegist(HttpServletRequest request,
+                           @RequestParam(value="username") String userName,
+                           @RequestParam(value="password") String password) throws Exception{
+        User user = new User(userName, password);
+        System.out.println(userName);
+        return loginService.doUserRegist(user);
+    }
+
 }
