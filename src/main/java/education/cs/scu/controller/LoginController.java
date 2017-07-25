@@ -4,6 +4,7 @@ import education.cs.scu.entity.User;
 import education.cs.scu.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -38,7 +39,7 @@ public class LoginController {
         }
     }
 
-    @RequestMapping(value="/userLogin", method= RequestMethod.POST)
+    @RequestMapping(value="/userRegist", method= RequestMethod.GET)
     public int userRegist(HttpServletRequest request,
                            @RequestParam(value="username") String userName,
                            @RequestParam(value="password") String password) throws Exception{
@@ -47,4 +48,9 @@ public class LoginController {
         return loginService.doUserRegist(user);
     }
 
+    @RequestMapping(value="/clickRegist", method= RequestMethod.GET)
+    public ModelAndView clickRegist() throws Exception{
+        //regist 为jsp文件名
+        return new ModelAndView("regist");
+    }
 }

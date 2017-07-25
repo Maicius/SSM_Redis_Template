@@ -8,13 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Login Success</title>
+    <title>注册</title>
 </head>
 <body>
-<form action="\regist.action" method="get">
-    <input type="text" name="userName" placeholder="用户名"/>
+<form action="\userRegist.action" method="get">
+    <input type="text" name="username" placeholder="用户名"/>
     <input type="password" name="password" placeholder="密码" />
-    <input type="submit" about="注册"/>
+    <input type="submit" value="注册"/>
 </form>
 </body>
 </html>

@@ -9,12 +9,17 @@
 <html>
 <head>
     <title>hello</title>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </head>
 <body>
+<form action="/clickRegist.action", method="get">
+    <input type="submit" about="注册"/>
+</form>
+
 <form action="\userLogin.action" method="get">
     <input type="text" name="userName" placeholder="用户名"/>
     <input type="password" name="password" placeholder="密码" />
-    <input type="submit" about="登陆"/>
+    <input type="submit" value="登陆"/>
 </form>
 </body>
 </html>

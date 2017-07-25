@@ -1,4 +1,4 @@
-package education.cs.scu.Redis;
+package education.cs.scu.redis;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -43,6 +43,7 @@ public class RedisPool {
             config.setMaxWaitMillis(MAX_WAIT);
             config.setTestOnBorrow(TEST_ON_BORROW);
             jedisPool = new JedisPool(config, URL, PORT, TIMEOUT, PASSOWRD);
+            System.out.println("Jedis初始化成功");
         }catch(Exception e) {
             e.printStackTrace();
         }
@@ -54,6 +55,7 @@ public class RedisPool {
         try{
             if (jedisPool != null) {
                 Jedis resource = jedisPool.getResource();
+                System.out.println("Jedis连接成功");
                 return resource;
             } else {
                 return null;
@@ -69,6 +71,7 @@ public class RedisPool {
      */
     public static void returnResource(final Jedis jedis) {
         if (jedis != null) {
+            System.out.println("Jedis连接关闭成功");
             jedisPool.close();
         }
     }
