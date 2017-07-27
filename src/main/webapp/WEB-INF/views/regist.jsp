@@ -12,7 +12,8 @@
 </head>
 <body>
 <form action="\userRegist.action" method="get">
-    <input type="text" name="username" placeholder="用户名"/>
+    <input type="text" name="userName" placeholder="用户名"/>
+    <input type="text" name="nickName" placeholder="昵称"/>
     <input type="password" name="password" placeholder="密码" />
     <input type="submit" value="注册"/>
 </form>

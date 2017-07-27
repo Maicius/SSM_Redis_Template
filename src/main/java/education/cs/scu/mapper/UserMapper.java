@@ -7,4 +7,5 @@ import education.cs.scu.entity.User;
  */
 public interface UserMapper {
     User doUserLogin(User user) throws Exception;
+
 }
