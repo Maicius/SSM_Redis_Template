@@ -1,9 +1,9 @@
 # spring_mvc_mybatis_maven模板
 
->基于maven的Java web项目框架模板，
->使用spring + spring_mvc + mybatis + spring-data-redis 等框架 
->各种配置文件都已写好
->并实现了一个简单的登陆注册功能
+>基于maven的Java web项目框架模板，  
+>使用spring + spring_mvc + mybatis + spring-data-redis 等框架   
+>各种配置文件都已写好  
+>并实现了一个简单的登陆注册功能  
 >可用于在IDEA上快速构建web项目或入门学习
 
 >更多 spring_mvc教程demo:  
