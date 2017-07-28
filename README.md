@@ -1,19 +1,19 @@
 # spring_mvc_mybatis_maven模板
 
->基于maven的java web项目框架模板，使用spring + spring_mvc + mybatis框架  
->可用于在IDEA上快速构建web项目
+>基于maven的Java web项目框架模板，
+>使用spring + spring_mvc + mybatis + spring-data-redis 等框架 
+>各种配置文件都已写好
+>并实现了一个简单的登陆注册功能
+>可用于在IDEA上快速构建web项目或入门学习
 
 >更多 spring_mvc教程demo:  
 >https://github.com/Maicius/Spring_course
 
-# 测试方法：
-- 将test.sql中sql语句复制到mysql中建立数据库
-- 修改db.properties里数据库相关属性（账户名和密码）
-- build -> run,正常显示网页
-- 输入数据库中到账户和密码，
-登陆跳转后显示用户名
-- 测试完成
-
+# Build and Run
+> - 本项目使用maven作为管理工具
+> - 默认数据库为redis,并使用spring-data-redis对redis进行了封装
+> - 如需使用mysql和mybatis
+> - 请回退到 2017-7-21日前版本
 # 一些可能到错误（针对mac）：
 
 ### 1.pom.xml里某些包出现无法找到对应版本
