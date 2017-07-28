@@ -16,9 +16,9 @@ import javax.servlet.http.HttpServletRequest;
 public class LoginController {
 
     @Autowired
-    LoginService loginService;
+    private LoginService loginService;
 
-    @RequestMapping(value="/userLogin", method= RequestMethod.POST)
+    @RequestMapping(value="/userLogin", method= RequestMethod.GET)
     public ModelAndView userLogin(HttpServletRequest request,
                              @RequestParam(value="userName") String userName,
                              @RequestParam(value="password") String password) throws Exception{
@@ -34,8 +34,9 @@ public class LoginController {
     @RequestMapping(value="/userRegist", method= RequestMethod.GET)
     public void userRegist(HttpServletRequest request,
                            @RequestParam(value="userName") String userName,
-                           @RequestParam(value="password") String password) throws Exception{
-        User user = new User(userName, password);
+                           @RequestParam(value="password") String password,
+                           @RequestParam(value="nickName") String nickName) throws Exception{
+        User user = new User(userName, password, nickName);
         System.out.println(userName);
         loginService.doUserRegist(user);
     }

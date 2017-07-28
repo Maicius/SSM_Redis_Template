@@ -1,7 +1,7 @@
-package education.cs.scu.mapper.impl;
+package education.cs.scu.DAO.impl;
 
+import education.cs.scu.DAO.RedisMapper;
 import education.cs.scu.entity.User;
-import education.cs.scu.mapper.RedisMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
@@ -11,12 +11,15 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class RedisMapperImpl implements RedisMapper{
+
     @Autowired
-    private RedisTemplate<String, Object> redisTemplate;
+    private RedisTemplate<String, User> redisTemplate;
 
     private static String USER_KEY = "ADMIN_USER";
     public User doUserLoginRedis(User user) throws Exception {
-        return (User)this.redisTemplate.opsForHash().get(USER_KEY, user.getUserName());
+        //HashOperations hashOperations = redisTemplate.opsForHash();
+        return (User)redisTemplate.opsForHash().get(USER_KEY, user.getUserName());
+
     }
 
     public void doUserRegist(User user) throws Exception {
@@ -28,6 +31,7 @@ public class RedisMapperImpl implements RedisMapper{
 //        RedisPool.returnResource(jedis);
 //        return i;
         this.redisTemplate.opsForHash().put(USER_KEY, user.getUserName(), user);
+
     }
 
 }

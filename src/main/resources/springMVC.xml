@@ -27,6 +27,7 @@
      -->
     <mvc:annotation-driven/>
 
+    <context:annotation-config />
 
     <!-- 视图解析器
     解析jsp解析，默认使用jstl标签，classpath下的得有jstl的包
@@ -39,6 +40,8 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!-- 引入redis属性配置文件 -->
+    <import resource="classpath:applicationContext-redis.xml"/>
     <!--&lt;!&ndash; 拦截器 &ndash;&gt;-->
     <!--<mvc:interceptors>-->
         <!--<mvc:interceptor>-->

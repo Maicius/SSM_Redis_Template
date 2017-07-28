@@ -11,6 +11,7 @@
     <title>Login Success</title>
 </head>
 <body>
-<p id="success">欢迎您，${sessionScope.user.nickName}</p>
+<h1> 登陆结果</h1>
+<p id="success">${sessionScope.user.nickName}</p>
 </body>
 </html>

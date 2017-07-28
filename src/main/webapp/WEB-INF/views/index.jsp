@@ -12,8 +12,8 @@
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </head>
 <body>
-<form action="/clickRegist.action", method="get">
-    <input type="submit" about="注册"/>
+<form action="\clickRegist.action", method="get">
+    <input type="submit" value="注册"/>
 </form>
 
 <form action="\userLogin.action" method="get">

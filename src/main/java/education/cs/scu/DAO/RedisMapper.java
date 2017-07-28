@@ -1,4 +1,4 @@
-package education.cs.scu.mapper;
+package education.cs.scu.DAO;
 
 import education.cs.scu.entity.User;
 

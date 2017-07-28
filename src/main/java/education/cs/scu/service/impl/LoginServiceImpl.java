@@ -1,6 +1,6 @@
 package education.cs.scu.service.impl;
 
-import education.cs.scu.mapper.RedisMapper;
+import education.cs.scu.DAO.impl.RedisMapperImpl;
 import education.cs.scu.entity.User;
 import education.cs.scu.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,25 +15,36 @@ import javax.servlet.http.HttpSession;
 public class LoginServiceImpl implements LoginService{
 
     @Autowired
-    private RedisMapper redisMapper;
+    private RedisMapperImpl redisMapper;
 
     public boolean doUserLogin(HttpServletRequest request, User user) throws Exception{
         User loginUser = redisMapper.doUserLoginRedis(user);
+        HttpSession session = request.getSession();
         //判断密码是否一致
         if(loginUser.getPassword().equals(user.getPassword())){
-            //清除密码，将user保存到session返回对象
-            HttpSession session = request.getSession();
+            //清除密码
             loginUser.setPassword("");
-            session.setAttribute("user", loginUser);
-            return true;
+            loginUser.setNickName( "恭喜你，登陆成功, " + loginUser.getNickName());
+            System.out.println("登陆成功:" + loginUser.getNickName());
         }else{
-            return false;
+            //清除密码
+            loginUser.setPassword("");
+            loginUser.setNickName("sorry，登陆失败");
+            System.out.println("登陆失败:" + loginUser.getNickName());
         }
+        //将user保存到session
+        session.setAttribute("user", loginUser);
+        return true;
         //return userMapper.doUserLogin(user);
     }
 
     public void doUserRegist(User user) throws Exception {
-        redisMapper.doUserRegist(user);
-        //jedis.set("user".getBytes(), SerializeUtil);
+        try {
+            redisMapper.doUserRegist(user);
+            System.out.println("注册成功");
+        }catch (Exception e){
+            System.out.println("注册失败");
+            e.printStackTrace();
+        }
     }
 }
