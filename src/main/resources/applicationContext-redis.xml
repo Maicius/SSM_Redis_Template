@@ -28,7 +28,7 @@
 		<property name="port" value="${redis.port}" />
 		<property name="timeout" value="${redis.maxWait}" />
 		<!--<property name="database" value="" />-->
-		<property name="password" value="${redis.pass}" />
+		<!--<property name="password" value="${redis.pass}" />-->
 		<property name="usePool" value="${redis.testOnBorrow}" />
 		<property name="poolConfig" ref="jedisPoolConfig" />
 	</bean>

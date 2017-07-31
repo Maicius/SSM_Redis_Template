@@ -24,11 +24,12 @@ public class LoginController {
                              @RequestParam(value="password") String password) throws Exception{
         User user = new User(userName, password);
         System.out.println(userName);
+        //判断是否登陆成功
         if(loginService.doUserLogin(request, user)){
             return new ModelAndView("login");
         }
         else
-            return null;
+            return new ModelAndView("loginFailed");
     }
 
     @RequestMapping(value="/userRegist", method= RequestMethod.GET)

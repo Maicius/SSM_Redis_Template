@@ -9,7 +9,7 @@
 
     <context:annotation-config />
 
-    <context:component-scan base-package="education.cs.scu.service.impl"/>
     <bean id="loginService" class="education.cs.scu.service.impl.LoginServiceImpl"/>
-    <context:component-scan base-package="education.cs.scu.DAO.impl" />
+    <bean id="redisMapper" class="education.cs.scu.DAO.impl.RedisMapperImpl"/>
+    <!--<context:component-scan base-package="education.cs.scu.DAO.impl" />-->
 </beans>
