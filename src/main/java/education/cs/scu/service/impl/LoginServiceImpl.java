@@ -4,6 +4,7 @@ import education.cs.scu.DAO.RedisMapper;
 import education.cs.scu.entity.User;
 import education.cs.scu.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Created by maicius on 2017/3/31.
  */
+@Service
 public class LoginServiceImpl implements LoginService{
 
     @Autowired

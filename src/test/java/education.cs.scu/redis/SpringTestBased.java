@@ -1,6 +1,6 @@
 package education.cs.scu.redis;
 
-import education.cs.scu.DAO.RedisMapper;
+import education.cs.scu.DAO.impl.RedisMapperImpl;
 import education.cs.scu.entity.User;
 import org.junit.Assert;
 import org.junit.Test;
@@ -14,14 +14,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath*:/applicationContext-dao.xml",
-                                                        "classpath*: /applicationContext-redis.xml",
-                                                        "classpath*: /applicationContext-service.xml",
-                                                        "classpath*: /applicationContext-transaction.xml",
-                                                        "classpath*: /springMVC.xml"})
-public class BaseTest {
+        "classpath*: /applicationContext-redis.xml",
+        "classpath*: /applicationContext-service.xml",
+        "classpath*: /applicationContext-transaction.xml",
+        "classpath*: /springMVC.xml"})
+public class SpringTestBased {
     @Autowired
-    private RedisMapper redisMapper;
-
+    private RedisMapperImpl redisMapper;
 
     @Test
     public void testRedis(){
