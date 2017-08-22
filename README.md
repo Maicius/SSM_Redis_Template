@@ -9,6 +9,14 @@
 >更多 spring_mvc教程demo:  
 >https://github.com/Maicius/Spring_course
 
+  
+# 几个重要的版本
+> - Java JDK 8
+> - Jedis 2.7.3
+> - Spring-data-redis  1.6.2.RELEASE
+> - mysql 5.1.6
+> - Spring 4.3.7.RELEASE
+  
 # Build and Run
 > - 本项目使用maven作为管理工具
 > - 默认数据库为redis,并使用spring-data-redis对redis进行了封装
