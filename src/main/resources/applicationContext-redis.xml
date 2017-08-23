@@ -10,9 +10,9 @@
 
 	<context:property-placeholder location="classpath:db.properties" />
 	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
-		<property name="maxActive" value="${redis.maxActive}"/>
+		<property name="maxTotal" value="${redis.maxActive}"/>
 		<property name="maxIdle" value="${redis.maxIdle}"/>
-		<property name="maxWait" value="${redis.maxWait}"/>
+		<property name="maxWaitMillis" value="${redis.maxWait}"/>
 		<property name="minEvictableIdleTimeMillis" value="300000"/>
 		<property name="numTestsPerEvictionRun" value="3"/>
 		<property name="timeBetweenEvictionRunsMillis" value="60000"/>
